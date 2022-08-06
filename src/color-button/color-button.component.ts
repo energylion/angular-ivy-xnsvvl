@@ -16,8 +16,8 @@ export class ColorButtonComponent implements OnInit {
     alert(this.input1);
   }
  
-  Changecolor() : string {
-    
+  Changecolor() {
+    this.input1 = 'yellow';
   }
 
 }
