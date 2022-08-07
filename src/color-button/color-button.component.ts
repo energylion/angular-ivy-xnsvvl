@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-color-button',
@@ -6,9 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./color-button.component.css']
 })
 export class ColorButtonComponent implements OnInit {
+ngOnInit(): void {
+throw new Error('Method not implemented.');
+}
 
   @Input()
   input1 :string;
+
+  @Output()
+  output1 :new EventEmitter()
 
   constructor() { }
 
@@ -19,6 +25,7 @@ export class ColorButtonComponent implements OnInit {
   Changecolor() {
     this.input1 = 'yellow';
     alert(this.input1);
+    this.output1.emit('blue');
   }
 
 }
