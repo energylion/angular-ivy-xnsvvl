@@ -6,15 +6,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./color-button.component.css']
 })
 export class ColorButtonComponent implements OnInit {
-ngOnInit(): void {
-throw new Error('Method not implemented.');
-}
 
   @Input()
   input1 :string;
 
   @Output()
-  output1 :new EventEmitter()
+  output1 :new EventEmitter;
 
   constructor() { }
 
