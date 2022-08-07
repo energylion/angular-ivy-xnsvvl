@@ -11,7 +11,7 @@ export class ColorButtonComponent implements OnInit {
   input1 :string;
 
   @Output()
-  output1 :new EventEmitter;
+  output1 :EventEmitter<string>;
 
   constructor() { }
 
