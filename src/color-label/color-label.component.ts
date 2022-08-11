@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ColorButtonComponent } from '../color-button/color-button.component';
 
 @Component({
@@ -8,16 +8,15 @@ import { ColorButtonComponent } from '../color-button/color-button.component';
 })
 export class ColorLabelComponent implements OnInit {
  
+  @Input()
+  textColorLabelInput :string;
+
   textColorLabel :string;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  CambiaTesto(e)
-  {
-    this.textColorLabel = e;
+    this.textColorLabel = this.textColorLabelInput
   }
 
 }

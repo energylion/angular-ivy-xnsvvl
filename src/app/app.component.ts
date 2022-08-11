@@ -8,8 +8,11 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
+  daComponentFratello :string;
+
   CambiaColore(e)
   {
     alert(e);
+this.daComponentFratello = e;
   }
 }
