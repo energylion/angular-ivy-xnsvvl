@@ -9,14 +9,12 @@ import { ColorButtonComponent } from '../color-button/color-button.component';
 export class ColorLabelComponent implements OnInit {
  
   @Input()
-  textColorLabelInput :string;
-
   textColorLabel :string;
 
   constructor() { }
 
   ngOnInit() {
-    this.textColorLabel = this.textColorLabelInput
+
   }
 
 }
