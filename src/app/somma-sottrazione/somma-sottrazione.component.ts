@@ -1,23 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-somma-sottrazione',
   templateUrl: './somma-sottrazione.component.html',
-  styleUrls: ['./somma-sottrazione.component.css']
+  styleUrls: ['./somma-sottrazione.component.css'],
 })
 export class SommaSottrazioneComponent implements OnInit {
   constructor() {}
 
-  a:number;
-  b:number;
+  @Output()
+  setTotLabel: EventEmitter<number> = new EventEmitter();
 
-  ngOnInit() {}
+  a: number;
+  b: number;
+  c: number;
 
-  somma(): number {
-    return this.a + this.b;
+  ngOnInit() {
+    this.a = 0;
+    this.b = 0;
+    this.c = 0;
   }
 
-  sottrai(): number {
-    return this.a - this.b;
+  somma() {
+    alert(this.a);
+    this.c = this.a + this.b;
+    alert(this.c);
+    this.setTotLabel.emit(this.c);
+  }
+
+  sottrai() {
+    this.c = this.a - this.b;
+    this.setTotLabel.emit(this.c);
   }
 }

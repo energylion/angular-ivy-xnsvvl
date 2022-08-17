@@ -12,10 +12,17 @@ export class AppComponent implements OnInit {
 
   tot: number;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.tot = 0;
+  }
 
   CambiaColore(e) {
     alert(e);
     this.daComponentFratello = e;
+  }
+
+  changeLabel(e) {
+    alert ("ci siamo");
+    this.tot= this.tot + e;
   }
 }
