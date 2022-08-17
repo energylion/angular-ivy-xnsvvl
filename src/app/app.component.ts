@@ -5,7 +5,7 @@ import { Component, VERSION } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnIni {
+export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
 
   daComponentFratello: string;
