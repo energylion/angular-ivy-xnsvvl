@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ColorButtonComponent } from '../color-button/color-button.component';
 import { ColorLabelComponent } from '../color-label/color-label.component';
+import { SommaSottrazioneComponent } from './somma-sottrazione/somma-sottrazione.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, ColorButtonComponent,
-  ColorLabelComponent  ],
+  ColorLabelComponent, SommaSottrazioneComponent  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
