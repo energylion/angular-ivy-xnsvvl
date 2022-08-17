@@ -5,14 +5,17 @@ import { Component, VERSION } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnIni {
   name = 'Angular ' + VERSION.major;
 
-  daComponentFratello :string;
+  daComponentFratello: string;
 
-  CambiaColore(e)
-  {
+  tot: number;
+
+  ngOnInit() {}
+
+  CambiaColore(e) {
     alert(e);
-this.daComponentFratello = e;
+    this.daComponentFratello = e;
   }
 }

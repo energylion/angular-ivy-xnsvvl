@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class SommaSottrazioneComponent implements OnInit {
   constructor() {}
 
+  a:number;
+  b:number;
+
   ngOnInit() {}
 
-  somma(a: number, b: number): number {
-    return a + b;
+  somma(): number {
+    return this.a + this.b;
   }
 
-  sottrai(a: number, b: number): number {
-    return a - b;
+  sottrai(): number {
+    return this.a - this.b;
   }
 }
