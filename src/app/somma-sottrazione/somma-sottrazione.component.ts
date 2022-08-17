@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-somma-sottrazione',
   templateUrl: './somma-sottrazione.component.html',
-  styleUrls: ['./somma-sottrazione.component.css'],
+  styleUrls: ['./somma-sottrazione.component.css']
 })
 export class SommaSottrazioneComponent implements OnInit {
   constructor() {}
