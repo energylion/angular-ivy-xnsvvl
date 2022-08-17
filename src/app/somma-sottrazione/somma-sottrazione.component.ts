@@ -23,13 +23,13 @@ export class SommaSottrazioneComponent implements OnInit {
 
   somma() {
     alert(this.a);
-    this.c = this.a + this.b;
+    this.c = (Number (this.a) + Number(this.b));
     alert(this.c);
     this.setTotLabel.emit(this.c);
   }
 
   sottrai() {
-    this.c = this.a - this.b;
+    this.c = (Number(this.a) - Number(this.b));
     this.setTotLabel.emit(this.c);
   }
 }
