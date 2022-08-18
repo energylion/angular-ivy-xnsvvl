@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookieConsent {
     private isConsented: boolean = false;
-
+ 
     constructor() {
         this.isConsented = this.getCookie(COOKIE_CONSENT) === '1';
     }
