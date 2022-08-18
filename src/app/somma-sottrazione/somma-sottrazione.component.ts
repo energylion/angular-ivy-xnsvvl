@@ -14,22 +14,26 @@ export class SommaSottrazioneComponent implements OnInit {
   a: number;
   b: number;
   c: number;
+  tot: number;
 
   ngOnInit() {
     this.a = 0;
     this.b = 0;
     this.c = 0;
+    this.tot = 0;
   }
 
   somma() {
-    alert(this.a);
-    this.c = (Number (this.a) + Number(this.b));
-    alert(this.c);
-    this.setTotLabel.emit(this.c);
+    this.c = Number(this.a) + Number(this.tot);
+
+    this.tot = this.c;
+    this.setTotLabel.emit(Number(this.c));
   }
 
   sottrai() {
-    this.c = (Number(this.a) - Number(this.b));
-    this.setTotLabel.emit(this.c);
+    this.c = Number(this.tot) - Number(this.b);
+
+    this.tot = this.c;
+    this.setTotLabel.emit(Number(this.c));
   }
 }

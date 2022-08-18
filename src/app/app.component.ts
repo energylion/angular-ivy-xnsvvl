@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   }
 
   changeLabel(e) {
-    alert ("ci siamo");
-    this.tot= (Number(this.tot) + Number(e));
+    this.tot= Number(e);
   }
 }
