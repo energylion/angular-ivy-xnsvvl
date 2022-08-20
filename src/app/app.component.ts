@@ -1,4 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { CookieService } from './cookiesconsent.service';
 
 @Component({
   selector: 'my-app',
@@ -12,6 +13,10 @@ export class AppComponent implements OnInit {
 
   tot: number;
 
+  constructor(private cookie:CookieService) {
+    this.cookie.getCookie('coffee')
+  }
+
   ngOnInit() {
     this.tot = 0;
   }
@@ -22,6 +27,6 @@ export class AppComponent implements OnInit {
   }
 
   changeLabel(e) {
-    this.tot= Number(e);
+    this.tot = Number(e);
   }
 }
