@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   tot: number;
 
   constructor(private cookie:CookieService) {
-    this.cookie.getCookie('coffee')
+    this.cookie.getCookie('coffee');
   }
 
   ngOnInit() {
