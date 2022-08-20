@@ -22,6 +22,7 @@ export class SommaSottrazioneComponent implements OnInit {
     this.b = 0;
     this.c = 0;
     this.tot = 0;
+    this.cookie.setCookie('coffee', this.tot.toString(), 30);
   }
 
   somma() {
