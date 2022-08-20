@@ -1,43 +1,39 @@
-import { Injectable } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-@Injectable()
-export class CookieService {
-  constructor() {}
+@Component({
+  selector: 'app-somma-sottrazione',
+  templateUrl: './somma-sottrazione.component.html',
+  styleUrls: ['./somma-sottrazione.component.css'],
+})
+export class SommaSottrazioneComponent implements OnInit {
+  constructor(cookie: cooekie) {}
 
-  public getCookie(name: string) {
-    let ca: Array<string> = document.cookie.split(';');
-    let caLen: number = ca.length;
-    let cookieName = `${name}=`;
-    let c: string;
+  @Output()
+  setTotLabel: EventEmitter<number> = new EventEmitter();
 
-    for (let i: number = 0; i < caLen; i += 1) {
-      c = ca[i].replace(/^\s+/g, '');
-      if (c.indexOf(cookieName) == 0) {
-        return c.substring(cookieName.length, c.length);
-      }
-    }
-    return '';
+  a: number;
+  b: number;
+  c: number;
+  tot: number;
+
+  ngOnInit() {
+    this.a = 0;
+    this.b = 0;
+    this.c = 0;
+    this.tot = 0;
   }
 
-  public deleteCookie(name) {
-    this.setCookie(name, '', -1);
+  somma() {
+    this.c = Number(this.a) + Number(this.tot);
+
+    this.tot = this.c;
+    this.setTotLabel.emit(Number(this.c));
   }
 
-  public setCookie(
-    name: string,
-    value: string,
-    expireDays: number,
-    path: string = ''
-  ) {
-    let d: Date = new Date();
-    d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1000);
-    let expires: string = 'expires=' + d.toUTCString();
-    document.cookie =
-      name +
-      '=' +
-      value +
-      '; ' +
-      expires +
-      (path.length > 0 ? '; path=' + path : '');
+  sottrai() {
+    this.c = Number(this.tot) - Number(this.b);
+
+    this.tot = this.c;
+    this.setTotLabel.emit(Number(this.c));
   }
 }

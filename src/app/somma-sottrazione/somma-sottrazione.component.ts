@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CookieService } from '../cookiesconsent.service';
 
 @Component({
   selector: 'app-somma-sottrazione',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./somma-sottrazione.component.css'],
 })
 export class SommaSottrazioneComponent implements OnInit {
-  constructor() {}
+  constructor(private cookie: CookieService) {}
 
   @Output()
   setTotLabel: EventEmitter<number> = new EventEmitter();
@@ -27,6 +28,7 @@ export class SommaSottrazioneComponent implements OnInit {
     this.c = Number(this.a) + Number(this.tot);
 
     this.tot = this.c;
+    this.cookie.setCookie('coffee', this.tot.toString(), 30);
     this.setTotLabel.emit(Number(this.c));
   }
 
@@ -34,6 +36,7 @@ export class SommaSottrazioneComponent implements OnInit {
     this.c = Number(this.tot) - Number(this.b);
 
     this.tot = this.c;
+    this.cookie.setCookie('coffee', this.tot.toString(), 30);
     this.setTotLabel.emit(Number(this.c));
   }
 }
