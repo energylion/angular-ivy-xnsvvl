@@ -7,11 +7,18 @@ import { HelloComponent } from './hello.component';
 import { ColorButtonComponent } from '../color-button/color-button.component';
 import { ColorLabelComponent } from '../color-label/color-label.component';
 import { SommaSottrazioneComponent } from './somma-sottrazione/somma-sottrazione.component';
+import { CookieService } from './cookiesconsent.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, ColorButtonComponent,
-  ColorLabelComponent, SommaSottrazioneComponent  ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    ColorButtonComponent,
+    ColorLabelComponent,
+    SommaSottrazioneComponent,
+  ],
+  bootstrap: [AppComponent],
+  providers: [CookieService],
 })
-export class AppModule { }
+export class AppModule {}

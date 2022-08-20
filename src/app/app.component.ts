@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   constructor(private cookie:CookieService) {
     this.cookie.getCookie('coffee');
+    alert ('mi');
   }
 
   ngOnInit() {
